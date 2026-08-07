@@ -8,10 +8,29 @@
 /* 브랜드·텍스트·배경 색을 변수로 모아 관리한다 */
 :root {
     --brand: #6C5CE7;
+    --brand-hover: #4834d4;
     --text: #222222;
     --text-muted: #888888;
     --bg: #f5f4fb;
     --card-bg: #ffffff;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --modal-overlay: rgba(0, 0, 0, 0.5);
+    --toggle-bg: #ffffff;
+    --toggle-border: #e5e5ef;
+}
+
+/* 다크모드 색 변수 */
+html.dark {
+    --brand: #a29bfe;
+    --brand-hover: #c4b5fd;
+    --text: #f2f2f7;
+    --text-muted: #a1a1aa;
+    --bg: #12121a;
+    --card-bg: #1e1e2a;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+    --modal-overlay: rgba(0, 0, 0, 0.7);
+    --toggle-bg: #1e1e2a;
+    --toggle-border: #2f2f3d;
 }
 
 /* 페이지 전체 배경색을 지정한다 */
@@ -22,6 +41,32 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* 다크모드 토글 버튼을 화면 모서리에 둔다 */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--toggle-border);
+    background: var(--toggle-bg);
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: var(--shadow);
+    transition: background 0.3s ease, color 0.3s ease, transform 0.15s ease;
+    z-index: 10;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
 }
 
 /* 드래그로 글자를 선택했을 때 브랜드 색이 보이게 한다 */
@@ -75,13 +120,14 @@ h1 {
     background: var(--card-bg);
     padding: 40px;
     border-radius: 24px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow);
     width: 300px;
     max-width: 420px;
     animation: card-in 0.6s ease both;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* 헤더 안 프로필·이름·역할 사이 간격을 조금 벌린다 */
@@ -106,7 +152,7 @@ header {
 
 /* 링크에 마우스를 올리면 색이 진해진다 */
 .links a:hover {
-    color: #4834d4;
+    color: var(--brand-hover);
 }
 
 /* 연락처 버튼에 브랜드 색을 적용한다 */
@@ -124,9 +170,21 @@ header {
 
 /* 버튼에 마우스를 올리면 살짝 떠오르며 색이 변한다 */
 .btn:hover {
-    background: #4834d4;
+    background: var(--brand-hover);
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(24, 19, 63, 0.35);
+}
+
+/* 모달 닫기 버튼도 테마 색을 따른다 */
+#closeBtn {
+    margin-top: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #fff;
+    font-family: inherit;
+    cursor: pointer;
 }
 
 /* 모달 오버레이: 기본은 숨기고, 열릴 때 부드럽게 페이드인 */
@@ -136,7 +194,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--modal-overlay);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -152,12 +210,13 @@ header {
 
 /* 모달 박스: 아래에서 살짝 올라오며 나타난다 */
 .modal_box {
-    background: #fff;
+    background: var(--card-bg);
+    color: var(--text);
     padding: 32px;
     border-radius: 20px;
     transform: translateY(16px) scale(0.96);
     opacity: 0;
-    transition: transform 0.25s ease, opacity 0.25s ease;
+    transition: transform 0.25s ease, opacity 0.25s ease, background 0.3s ease, color 0.3s ease;
 }
 
 /* 열린 상태의 모달 박스 최종 위치 */
