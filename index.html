@@ -8,9 +8,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+        (function () {
+            const saved = localStorage.getItem('theme');
+            const dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (dark) document.documentElement.classList.add('dark');
+        })();
+    </script>
     <script src="https://kit.fontawesome.com/8e95438240.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="다크모드 전환">
+    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+</button>
 <main class="card">
     <header>
         <img class="avatar" src="형민.png" alt="형민">
