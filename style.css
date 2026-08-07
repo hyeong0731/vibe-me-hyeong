@@ -1,3 +1,167 @@
-body{
-    background:#EAAAAA
+/* 모든 요소의 박스 모델·기본 여백을 초기화한다 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 브랜드·텍스트·배경 색을 변수로 모아 관리한다 */
+:root {
+    --brand: #6C5CE7;
+    --text: #222222;
+    --text-muted: #888888;
+    --bg: #f5f4fb;
+    --card-bg: #ffffff;
+}
+
+/* 페이지 전체 배경색을 지정한다 */
+body {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 드래그로 글자를 선택했을 때 브랜드 색이 보이게 한다 */
+::selection {
+    background: var(--brand);
+    color: #ffffff;
+}
+
+/* 이름(h1)의 글자 크기와 굵기를 지정한다 */
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: "Yeon Sung", system-ui;
+}
+
+/* 프로필 사진을 원형으로 자른다 */
+.avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 역할 문구를 작게·흐리게 보이게 한다 */
+.role {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* 소개 문단의 크기와 줄간격을 지정한다 */
+.bio {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* 카드가 아래에서 부드럽게 떠오르며 등장한다 */
+@keyframes card-in {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 명함 카드를 흰 배경·둥근 모서리·그림자로 꾸민다 */
+.card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    width: 300px;
+    max-width: 420px;
+    animation: card-in 0.6s ease both;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* 헤더 안 프로필·이름·역할 사이 간격을 조금 벌린다 */
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* 링크들을 가로 한 줄로 나란히 배치한다 */
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+/* 링크에 브랜드 색을 적용하고 밑줄을 제거한다 */
+.links a {
+    color: var(--brand);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* 링크에 마우스를 올리면 색이 진해진다 */
+.links a:hover {
+    color: #4834d4;
+}
+
+/* 연락처 버튼에 브랜드 색을 적용한다 */
+.btn {
+    padding: 15px 32px;
+    border: none;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+}
+
+/* 버튼에 마우스를 올리면 살짝 떠오르며 색이 변한다 */
+.btn:hover {
+    background: #4834d4;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(24, 19, 63, 0.35);
+}
+
+/* 모달 오버레이: 기본은 숨기고, 열릴 때 부드럽게 페이드인 */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+/* 모달이 열리면 보이게 한다 */
+.modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* 모달 박스: 아래에서 살짝 올라오며 나타난다 */
+.modal_box {
+    background: #fff;
+    padding: 32px;
+    border-radius: 20px;
+    transform: translateY(16px) scale(0.96);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* 열린 상태의 모달 박스 최종 위치 */
+.modal.is-open .modal_box {
+    transform: translateY(0) scale(1);
+    opacity: 1;
 }
