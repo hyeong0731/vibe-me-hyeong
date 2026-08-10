@@ -5,22 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- 검색엔진용 -->
-    <title>김형민 · 바이브 미</title>
-    <meta name="description" content="결정한 이상 머뭇거릴 필요 없다.">
+    <title>김형민 · 바이브 미 | 동국대학교 컴퓨터공학</title>
+    <meta name="description" content="동국대학교 컴퓨터공학 김형민의 자기소개 페이지. 결정한 이상 머뭇거릴 필요 없다.">
+    <meta name="keywords" content="김형민, 동국대학교, 컴퓨터공학, 바이브코딩, 자기소개, 포트폴리오">
+    <meta name="author" content="김형민">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://hyeong0731.github.io/vibe-me-hyeong/">
 
     <!-- SNS 공유 카드용 (카톡·슬랙·페북·인스타) -->
     <meta property="og:title" content="김형민 · 바이브 미">
-    <meta property="og:description" content="결정한 이상 머뭇거릴 필요 없다.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/hyeong0731/vibe-me-hyeong/main/images/%ED%98%95%EB%AF%BC.png">
+    <meta property="og:description" content="동국대학교 컴퓨터공학 김형민의 자기소개 페이지. 결정한 이상 머뭇거릴 필요 없다.">
+    <meta property="og:image" content="https://hyeong0731.github.io/vibe-me-hyeong/images/op.png">
+    <meta property="og:image:alt" content="김형민 바이브 미 미리보기 이미지">
     <meta property="og:url" content="https://hyeong0731.github.io/vibe-me-hyeong/">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="김형민 · 바이브 미">
     <meta property="og:locale" content="ko_KR">
+    <meta property="profile:first_name" content="형민">
+    <meta property="profile:last_name" content="김">
 
     <!-- 트위터/X용 -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="김형민 · 바이브 미">
-    <meta name="twitter:description" content="결정한 이상 머뭇거릴 필요 없다.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/hyeong0731/vibe-me-hyeong/main/images/%ED%98%95%EB%AF%BC.png">
+    <meta name="twitter:description" content="동국대학교 컴퓨터공학 김형민의 자기소개 페이지. 결정한 이상 머뭇거릴 필요 없다.">
+    <meta name="twitter:image" content="https://hyeong0731.github.io/vibe-me-hyeong/images/op.png">
+    <meta name="twitter:image:alt" content="김형민 바이브 미 미리보기 이미지">
 
     <!-- 파비콘 -->
     <link rel="apple-touch-icon" sizes="57x57" href="images/favi/fa8e98e45b56ee4c651b60e642b8b7e4.ico/apple-icon-57x57.png">
@@ -42,6 +52,31 @@
     <meta name="msapplication-TileImage" content="images/favi/fa8e98e45b56ee4c651b60e642b8b7e4.ico/ms-icon-144x144.png">
     <meta name="theme-color" content="#6C5CE7">
 
+    <!-- 구조화 데이터 (Google 리치 결과용) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "김형민",
+        "url": "https://hyeong0731.github.io/vibe-me-hyeong/",
+        "image": "https://hyeong0731.github.io/vibe-me-hyeong/images/%ED%98%95%EB%AF%BC.png",
+        "jobTitle": "컴퓨터공학 전공",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "동국대학교"
+        },
+        "description": "결정한 이상 머뭇거릴 필요 없다.",
+        "email": "mailto:k01042322375@gmail.com",
+        "sameAs": [
+          "https://github.com/hyeong0731/vibe-me-hyeong",
+          "https://www.instagram.com/k_hm0731/"
+        ]
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
@@ -56,31 +91,29 @@
     <script src="https://kit.fontawesome.com/8e95438240.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<main class="card">
+<main class="card" itemscope itemtype="https://schema.org/Person">
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="다크모드 전환">
         <i class="fa-solid fa-moon" aria-hidden="true"></i>
     </button>
     <header>
-        <img class="avatar" src="images/형민.png" alt="형민">
-        <h1> 김형민</h1>
-        <p class="role"> 동국대학교 컴퓨터공학</p>
+        <img class="avatar" src="images/형민.png" alt="김형민 프로필 사진" width="96" height="96" itemprop="image">
+        <h1 itemprop="name">김형민</h1>
+        <p class="role" itemprop="jobTitle">동국대학교 컴퓨터공학</p>
     </header>
-    <section class="bio">
-        <p> 결정한 이상 머뭇거릴 필요 없다.</p>
+    <section class="bio" aria-label="소개">
+        <p itemprop="description">결정한 이상 머뭇거릴 필요 없다.</p>
     </section>
-    <nav class="links">
-        <a href="https://github.com/hyeong0731/vibe-me-hyeong"><i class="fa-brands fa-github"></i> Github</a>
-        <a href="https://www.instagram.com/k_hm0731/"><i class="fa-brands fa-instagram"></i> Instagram</a>
-    </nav>   
-<button class="btn" id="contactBtn"> 연락처보기
-
-</button>
+    <nav class="links" aria-label="소셜 링크">
+        <a href="https://github.com/hyeong0731/vibe-me-hyeong" target="_blank" rel="noopener noreferrer" itemprop="sameAs"><i class="fa-brands fa-github" aria-hidden="true"></i> Github</a>
+        <a href="https://www.instagram.com/k_hm0731/" target="_blank" rel="noopener noreferrer" itemprop="sameAs"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>
+    </nav>
+    <button class="btn" id="contactBtn" type="button" aria-haspopup="dialog" aria-controls="modal">연락처보기</button>
 </main>
-<div class="modal" id="modal">
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
     <div class="modal_box">
-        <h2>연락처</h2>
-        <p> 이메일 : k01042322375@gmail.com</p>
-        <button id="closeBtn">닫기</button>
+        <h2 id="contactTitle">연락처</h2>
+        <p>이메일 : <a href="mailto:k01042322375@gmail.com">k01042322375@gmail.com</a></p>
+        <button id="closeBtn" type="button">닫기</button>
     </div>
 </div>
     <script src="script.js"></script>
