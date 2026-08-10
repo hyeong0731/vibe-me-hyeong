@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hyeong0731.github.io/vibe-me-hyeong/sitemap.xml
+Sitemap: https://hyeongmindgu.netlify.app/sitemap.xml
