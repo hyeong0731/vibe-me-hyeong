@@ -1,0 +1,25 @@
+{
+  "name": "김형민 · 바이브 미",
+  "short_name": "바이브미",
+  "description": "동국대학교 컴퓨터공학 김형민의 자기소개 페이지",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F5F4FB",
+  "theme_color": "#6C5CE7",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
